@@ -27,10 +27,12 @@ struct VolumeInfo: Decodable {
 
     var authorString: String {
         var authorString = ""
-        for i in self.authors! {
-            authorString += "\(i), "
+        if let authors = self.authors {
+            for a in authors {
+                authorString += "\(a), "
+            }
+            authorString.removeLast(2)
         }
-        authorString.removeLast(2)
         return authorString
     }
 }
