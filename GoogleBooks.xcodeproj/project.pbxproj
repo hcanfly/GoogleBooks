@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3E95606F243A484800EF60D9 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E95606E243A484800EF60D9 /* Network.swift */; };
 		3EF5D7072427C226006012A6 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D7062427C226006012A6 /* BookTableViewCell.swift */; };
 		3EF5D7092427D1F2006012A6 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EF5D7082427D1F2006012A6 /* WebViewController.swift */; };
 		4E25713A242470C800700331 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E257139242470C800700331 /* AppDelegate.swift */; };
@@ -22,6 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E95606E243A484800EF60D9 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3EF5D7062427C226006012A6 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
 		3EF5D7082427D1F2006012A6 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		4E257136242470C800700331 /* GoogleBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoogleBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 				4E25714D2424711400700331 /* Model.swift */,
 				3EF5D7062427C226006012A6 /* BookTableViewCell.swift */,
 				3EF5D7082427D1F2006012A6 /* WebViewController.swift */,
+				3E95606E243A484800EF60D9 /* Network.swift */,
 			);
 			path = GoogleBooks;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3E95606F243A484800EF60D9 /* Network.swift in Sources */,
 				4E2571502426BB8500700331 /* SearchViewController.swift in Sources */,
 				4E665C742427380000407614 /* AsyncCachedImageView.swift in Sources */,
 				3EF5D7092427D1F2006012A6 /* WebViewController.swift in Sources */,

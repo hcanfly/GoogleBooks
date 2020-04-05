@@ -8,8 +8,6 @@
 
 import UIKit
 
-let baseURLString = "https://www.googleapis.com/books/v1/volumes?q="
-
 
 struct Book: Decodable {
     let id: String?
@@ -57,38 +55,4 @@ extension BookList {
 
         books = try? values.decode([Book].self, forKey: .items)
     }
-}
-
-
-
-private func fetchNetworkData<T: Decodable>(urlString: String, myType: T.Type, completion: @escaping (T) -> Void) {
-      guard let url = URL(string: urlString) else {
-        return
-      }
-    let task = URLSession.shared.dataTask(with: url) { data, _, error in
-        if let data = data {
-            //let str = String(decoding: data, as: UTF8.self)
-            //print(str)
-            let jsonDecoder = JSONDecoder()
-            do {
-                let theData = try jsonDecoder.decode(T.self, from: data)
-                DispatchQueue.main.async {
-                    completion(theData)
-                }
-            } catch {
-                print("Error parsing JSON")
-            }
-        } else {
-            print("Download error: " + error!.localizedDescription)
-        }
-    }
-
-    task.resume()
-}
-
-func getMatchingBooks<T: Decodable>(for subject: String, myType: T.Type, completion: @escaping (T) -> Void) {
-
-    fetchNetworkData(urlString: baseURLString + "\(subject)", myType: T.self) { foundBooks in
-         completion(foundBooks)
-     }
 }

@@ -47,7 +47,7 @@ final class SearchViewController: UIViewController {
         self.debounceReload = self.debouncer.debounce(delay: .seconds(1)) {
             if self.searchController.searchBar.text!.count > 1 {
                 // just in case of an extra space. more than that - too bad
-                let newstring = self.searchController.searchBar.text!.replacingOccurrences(of: "  ", with: " ")
+                let newstring = self.searchController.searchBar.text!.replacingOccurrences(of: "  ", with: "+")
                 var searchString = newstring.replacingOccurrences(of: " ", with: "+")
                 searchString = searchString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
                 if searchString.count > 1 {
@@ -75,7 +75,7 @@ final class SearchViewController: UIViewController {
     }
 
     private func findMatchingBooks(for subject: String) {
-        getMatchingBooks(for: subject, myType: BookList.self) { [weak self] foundTitles in
+        getMatchingBooks(likeTitle: subject, myType: BookList.self) { [weak self] foundTitles in
             if let self = self {
                 self.books = foundTitles
                 self.tableView.reloadData()
